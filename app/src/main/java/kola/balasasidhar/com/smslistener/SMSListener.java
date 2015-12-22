@@ -19,10 +19,10 @@ import java.util.Date;
 public class SMSListener extends BroadcastReceiver {
 
     private static final String SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
-    private static final String TAG = "SMSBroadcastReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
         if (intent.getAction().equals(SMS_RECEIVED)) {
             Bundle bundle = intent.getExtras();
 
@@ -52,8 +52,6 @@ public class SMSListener extends BroadcastReceiver {
                 NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(002, mBuilder.build());
             }
-
-
         }
     }
 
